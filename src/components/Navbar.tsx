@@ -26,7 +26,7 @@ export default function Navbar() {
             <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
                 <span className="font-bold text-xl">Sertan Erdogan</span>
                 {/* Desktop Nav */}
-                <ul className="items-center gap-6 flex">
+                <ul className="hidden md:flex items-center gap-6">
                     {navItems.map((item) => (
                         <li key={item.href}>
                             <Link
@@ -42,17 +42,8 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                {/* Hamburger Menu */}
-                <button
-                    type="button"
-                    aria-label="Toggle menu"
-                    onClick={toggleMenu}
-                    className="rounded-md border border-zinc-200 p-2 md:hidden dark:border-zinc-800"
-                >
-                    {menuOpen ? <X size={20} /> : <Menu size={20}/>}
-                </button>
-                {/* Right Side (Theme toggle later) */}
                 <div className="flex items-center gap-4">
+                    {/* Theme toggle – keep it visible on all breakpoints */}
                     <button
                         type="button"
                         aria-label="Toggle theme"
@@ -60,12 +51,27 @@ export default function Navbar() {
                     >
                         <Moon size={18} />
                     </button>
+                    {/* Hamburger Menu */}
+                    <button
+                        type="button"
+                        aria-label="Toggle menu"
+                        onClick={toggleMenu}
+                        className="rounded-md border border-zinc-200 p-2 md:hidden dark:border-zinc-800"
+                    >
+                        {menuOpen ? <X size={20} /> : <Menu size={20}/>}
+                    </button>
                 </div>
             </nav>
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden border-t border-zinc-200 bg-zinc-50/95 dark:border-zinc-800 dark:bg-black/95">
-                    <ul className="flex flex-col gap-4 p-4">
+                <div 
+                    className="
+                        md:hidden border-t border-zinc-200 
+                        bg-zinc-50/95 dark:border-zinc-800 
+                        dark:bg-black/95 animate-slide-down
+                    "
+                >
+                    <ul className="flex flex-col items-center gap-4 p-4">
                         {navItems.map(item => (
                             <li key={item.href}>
                                 <Link

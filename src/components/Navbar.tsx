@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { useState } from "react";
-import { X, Menu, Moon } from "lucide-react";
+import { X, Menu, Moon, Sun } from "lucide-react";
+import { useTheme } from "../hooks/useTheme";
 
 const navItems = [
     { label: "About", href: "#about" },
@@ -20,6 +21,8 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => setMenuOpen(prev => !prev);
     const closeMenu = () => setMenuOpen(false);
+
+    const { theme, toggle: toggleTheme } = useTheme();
 
     return (
         <header className="fixed top-0 w-full border-b border-zinc-200 bg-zinc-50/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80">
@@ -43,13 +46,14 @@ export default function Navbar() {
                     ))}
                 </ul>
                 <div className="flex items-center gap-4">
-                    {/* Theme toggle – keep it visible on all breakpoints */}
+                    {/* Theme toggle */}
                     <button
                         type="button"
                         aria-label="Toggle theme"
+                        onClick={toggleTheme}
                         className="rounded-md border border-zinc-200 p-2 text-sm dark:border-zinc-800"
                     >
-                        <Moon size={18} />
+                        {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
                     </button>
                     {/* Hamburger Menu */}
                     <button
@@ -93,4 +97,4 @@ export default function Navbar() {
             )}
         </header>
     );
-}
+} 

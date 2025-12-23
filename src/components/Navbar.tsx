@@ -25,19 +25,19 @@ export default function Navbar() {
     const { theme, toggle: toggleTheme } = useTheme();
 
     return (
-        <header className="fixed top-0 w-full border-b border-zinc-200 bg-zinc-50/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80">
+        <header className="fixed top-0 w-full bg-surface/80 backdrop-blur border-b border-border">
             <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-                <span className="font-bold text-xl">Sertan Erdogan</span>
+                <span className="font-bold text-xl text-text">Sertan Erdogan</span>
                 {/* Desktop Nav */}
                 <ul className="hidden md:flex items-center gap-6">
                     {navItems.map((item) => (
                         <li key={item.href}>
                             <Link
                                 href={item.href}
-                                className={`text-sm transition ${
+                                className={`text-sm font-medium transition-colors ${
                                     activeId === item.href.slice(1)
-                                    ? "text-primary dark:text-primary-400"
-                                    : "text-zinc-600  hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                                    ? "text-accent"
+                                    : "text-muted hover:text-accent hover:opacity-80"
                                     }`}
                             >
                                 {item.label}
@@ -51,7 +51,7 @@ export default function Navbar() {
                         type="button"
                         aria-label="Toggle theme"
                         onClick={toggleTheme}
-                        className="rounded-md border border-zinc-200 p-2 text-sm dark:border-zinc-800"
+                        className="rounded-md border border-border p-2 text-text hover:bg-border/40 transition"
                     >
                         {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
                     </button>
@@ -60,7 +60,7 @@ export default function Navbar() {
                         type="button"
                         aria-label="Toggle menu"
                         onClick={toggleMenu}
-                        className="rounded-md border border-zinc-200 p-2 md:hidden dark:border-zinc-800"
+                        className="rounded-md border border-border p-2 text-text hover:bg-border/40 md:hidden transition"
                     >
                         {menuOpen ? <X size={20} /> : <Menu size={20}/>}
                     </button>
@@ -70,9 +70,8 @@ export default function Navbar() {
             {menuOpen && (
                 <div 
                     className="
-                        md:hidden border-t border-zinc-200 
-                        bg-zinc-50/95 dark:border-zinc-800 
-                        dark:bg-black/95 animate-slide-down
+                        md:hidden bg-surface border-t 
+                        border-border animate-slide-down
                     "
                 >
                     <ul className="flex flex-col items-center gap-4 p-4">
@@ -81,10 +80,10 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     className={`
-                                        block text-sm
+                                        block text-sm font-medium transition-colors
                                         ${activeId === item.href.slice(1)
-                                            ? "text-primary dark:text-primary-400"
-                                            : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"}
+                                            ? "text-accent"
+                                            : "text-muted hover:text-accent hover:opacity-80"}
                                     `}
                                     onClick={closeMenu}
                                 >

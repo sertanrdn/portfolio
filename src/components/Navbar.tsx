@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useActiveSection } from "../hooks/useActiveSection";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { X, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 
@@ -15,14 +15,31 @@ const navItems = [
 
 export default function Navbar() {
     // scroll-spy
-    const sectionId = navItems.map(i => i.href.slice(1));
-    const activeId = useActiveSection(sectionId);
+    const sectionIds = useMemo(
+        () => navItems.map(i => i.href.slice(1)),
+        []
+    );
+    const activeId = useActiveSection(sectionIds);
     // hamburger menu states
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => setMenuOpen(prev => !prev);
     const closeMenu = () => setMenuOpen(false);
 
     const { theme, toggle: toggleTheme } = useTheme();
+
+    // Close menu on escape
+    useEffect(() => {
+        if (!menuOpen) return;
+      
+        const onKeyDown = (e: KeyboardEvent) => {
+          if (e.key === "Escape") {
+            setMenuOpen(false);
+          }
+        };
+      
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [menuOpen]);
 
     return (
         <header className="fixed top-0 w-full bg-surface/80 backdrop-blur border-b border-border">
@@ -59,16 +76,18 @@ export default function Navbar() {
                     <button
                         type="button"
                         aria-label="Toggle menu"
+                        aria-controls="mobile-menu"
                         onClick={toggleMenu}
                         className="rounded-md border border-border p-2 text-text hover:bg-border/40 md:hidden transition"
                     >
-                        {menuOpen ? <X size={20} /> : <Menu size={20}/>}
+                        {menuOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
                 </div>
             </nav>
             {/* Mobile Menu */}
             {menuOpen && (
                 <div 
+                    id="mobile-menu"
                     className="
                         md:hidden bg-surface border-t 
                         border-border animate-slide-down

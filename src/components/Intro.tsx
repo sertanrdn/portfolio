@@ -2,12 +2,12 @@ import { introData } from "../data/intro";
 
 export default function Intro() {
     return (
-        <section id="intro" className="min-h-screen flex items-center">
+        <section id="intro" className="min-h-[calc(100vh-5rem)] flex items-center">
             <div className="max-w-7xl mx-auto px-4 w-full">
                 {/* Layout wrapper */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     {/* Image column */}
-                    <div className="flex justify-center md:justify-start">
+                    <div className="flex justify-center md:justify-center md:pl-10">
                         {/* Image will go here */}
                         <div className="w-40 h-40 md:w-64 md:h-64 rounded-full bg-gray-200" />
                     </div>

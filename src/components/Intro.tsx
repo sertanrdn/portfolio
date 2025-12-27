@@ -1,4 +1,5 @@
 import { introData } from "../data/intro";
+import Image from "next/image";
 
 export default function Intro() {
     return (
@@ -10,9 +11,11 @@ export default function Intro() {
                     <div className="flex justify-center md:justify-center md:pr-12">
                         {/* Image will go here */}
                         <div className="w-40 h-40 md:w-64 md:h-64 rounded-full bg-gray-200">
-                            <img
+                            <Image
                                 src="/profile.jpeg"
                                 alt="Sertan Erdogan"
+                                width={1120}
+                                height={1600}
                                 className="w-full h-full object-cover rounded-full"
                             />
                         </div>

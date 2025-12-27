@@ -89,7 +89,7 @@ export default function Navbar() {
                 <div 
                     id="mobile-menu"
                     className="
-                        md:hidden bg-surface border-t 
+                        md:hidden bg-surface border-t
                         border-border animate-slide-down
                     "
                 >

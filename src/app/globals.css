@@ -40,3 +40,13 @@ body {
   --border: #1e293b;
   --accent: #818cf8;
 }
+
+a.intro-cta-button {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+a.intro-cta-button:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}

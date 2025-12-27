@@ -32,7 +32,7 @@ export default function Intro() {
                         <a 
                             href={introData.cta.href} 
                             className="
-                                inline-flex items-center justify-center
+                                intro-cta-button inline-flex items-center justify-center
                                 mt-6 px-6 py-3 rounded-lg border 
                                 border-accent text-accent font-medium
                                 transition hover:bg-accent 

@@ -13,7 +13,7 @@ export default function Intro() {
                         <div className="w-40 h-40 md:w-64 md:h-64 rounded-full bg-gray-200">
                             <Image
                                 src="/profile.jpeg"
-                                alt="Sertan Erdogan"
+                                alt={introData.name}
                                 width={1120}
                                 height={1600}
                                 className="w-full h-full object-cover rounded-full"
@@ -35,11 +35,9 @@ export default function Intro() {
                         <a 
                             href={introData.cta.href} 
                             className="
-                                intro-cta-button inline-flex items-center justify-center
-                                mt-6 px-6 py-3 rounded-lg border 
-                                border-accent text-accent font-medium
-                                transition hover:bg-accent 
-                                hover:text-background hover:shadow-md
+                                intro-cta-button inline-flex items-center 
+                                justify-center mt-6 px-6 py-3 rounded-lg 
+                                border font-medium transition hover:shadow-md
                             "
                         >
                             {introData.cta.label}

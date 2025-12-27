@@ -41,12 +41,12 @@ body {
   --accent: #818cf8;
 }
 
-.intro-cta-button {
-  border-color: var(--accent) !important;
-  color: var(--accent) !important;
+a.intro-cta-button {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-.intro-cta-button:hover {
-  background-color: var(--accent) !important;
-  color: var(--bg) !important;
+a.intro-cta-button:hover {
+  background-color: var(--accent);
+  color: var(--bg);
 }

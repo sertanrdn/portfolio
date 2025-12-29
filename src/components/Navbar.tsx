@@ -5,6 +5,7 @@ import { useActiveSection } from "../hooks/useActiveSection";
 import { useState, useMemo, useEffect } from "react";
 import { X, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import DrawerMenu from "./DrawerMenu";
 
 const navItems = [
     { label: "About", href: "#about" },
@@ -42,8 +43,8 @@ export default function Navbar() {
     }, [menuOpen]);
 
     return (
-        <header className="fixed top-0 w-full bg-surface/80 backdrop-blur border-b border-border">
-            <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        <header className="fixed top-0 w-full z-30">
+            <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 bg-surface/95 backdrop-blur border-b border-border">
                 <span className="font-bold text-xl text-text">Sertan Erdogan</span>
                 {/* Desktop Nav */}
                 <ul className="hidden md:flex items-center gap-6">
@@ -76,7 +77,6 @@ export default function Navbar() {
                     <button
                         type="button"
                         aria-label="Toggle menu"
-                        aria-controls="mobile-menu"
                         onClick={toggleMenu}
                         className="rounded-md border border-border p-2 text-text hover:bg-border/40 md:hidden transition"
                     >
@@ -84,35 +84,13 @@ export default function Navbar() {
                     </button>
                 </div>
             </nav>
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div 
-                    id="mobile-menu"
-                    className="
-                        md:hidden bg-surface border-t
-                        border-border animate-slide-down
-                    "
-                >
-                    <ul className="flex flex-col items-center gap-4 p-4">
-                        {navItems.map(item => (
-                            <li key={item.href}>
-                                <Link
-                                    href={item.href}
-                                    className={`
-                                        block text-sm font-medium transition-colors
-                                        ${activeId === item.href.slice(1)
-                                            ? "text-accent"
-                                            : "text-muted hover:text-accent hover:opacity-80"}
-                                    `}
-                                    onClick={closeMenu}
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            {/* drawer menu */}
+            <DrawerMenu
+                open={menuOpen}
+                onClose={closeMenu}
+                items={navItems}
+                activeId={activeId}
+            />
         </header>
     );
 } 

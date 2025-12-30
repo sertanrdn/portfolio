@@ -37,7 +37,7 @@ export default function DrawerMenu({ open, onClose, items, activeId }: DrawerMen
                     type="button"
                     onClick={onClose}
                     aria-label="Close menu"
-                    className="rounded-md p-2 text-muted hover:bg-border/20 transition"
+                    className="rounded-md p-2 text-muted hover:bg-border/20 transition cursor-pointer"
                 >
                     <X size={24} />
                 </button>

@@ -42,6 +42,19 @@ export default function Navbar() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [menuOpen]);
 
+    // Block scrolling when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+        }
+    }, [menuOpen]);
+
     return (
         <header className="fixed top-0 w-full z-30">
             <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 bg-surface/95 backdrop-blur border-b border-border">

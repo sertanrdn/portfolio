@@ -20,17 +20,20 @@ export default function DrawerMenu({ open, onClose, items, activeId }: DrawerMen
             {/* Backdrop */}
             <div 
                 className={`absolute inset-0 bg-background/95 backdrop-blur-sm
-                    transition-opacity duration-500
+                    transition-opacity duration-800
                     ${open ? "opacity-100" : "opacity-0"}
                 `}
                 onClick={onClose}
             />
             {/* Menu */}
             <div
-            className={`relative h-full flex flex-col transform 
-                transition-all duration-800 ease-[cubic-bezier(.22,1,.36,1)]
-                ${open ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"}
-            `}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation menu"
+                className={`relative h-full flex flex-col transform 
+                    transition-all duration-800 ease-[cubic-bezier(.22,1,.36,1)]
+                    ${open ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"}
+                `}
             >
             <div className="flex items-center justify-end p-4">
                 <button

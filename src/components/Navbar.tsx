@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { useState, useMemo, useEffect } from "react";
-import { X, Menu, Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 import DrawerMenu from "./DrawerMenu";
 
@@ -94,7 +94,7 @@ export default function Navbar() {
                             onClick={toggleMenu}
                             className="rounded-md border border-border p-2 text-text hover:bg-border/40 md:hidden transition cursor-pointer"
                         >
-                            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                            <Menu size={20} />
                         </button>
                     </div>
                 </div>

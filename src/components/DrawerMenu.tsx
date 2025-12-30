@@ -28,7 +28,7 @@ export default function DrawerMenu({ open, onClose, items, activeId }: DrawerMen
             {/* Menu */}
             <div
             className={`relative h-full flex flex-col transform 
-                transition-all duration-800 ease-in-out
+                transition-all duration-800 ease-[cubic-bezier(.22,1,.36,1)]
                 ${open ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"}
             `}
             >

@@ -1,3 +1,4 @@
+import About from "../components/About";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 
@@ -10,6 +11,7 @@ export default function Home() {
         {/* Intro */}
         <Intro />
         {/* About */}
+        <About />
         {/* Projects */}
         {/* Skills */}
         {/* Contact */}

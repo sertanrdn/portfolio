@@ -8,16 +8,12 @@ export default function About() {
             />
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section label */}
-                <p className="mb-3 text-sm font-medium tracking-widest text-muted uppercase">
+                <p className="mb-10 text-sm font-medium tracking-widest text-muted uppercase">
                     About Me
                 </p>
-                {/* Heading */}
-                <h2 className="mb-10 max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
-                    A bit about who I am and how I work
-                </h2>
                 <div className="grid gap-12 md:grid-cols-2">
                     {/* Column 1 */}
-                    <div className="space-y-6 text-base leading-relaxed text-muted md:text-lg">
+                    <div className="space-y-6 max-w-prose text-base leading-relaxed text-muted md:text-lg">
                         <p>
                             I’m a full-stack web developer based in the Netherlands who enjoys 
                             turning real-world problems into practical, working solutions using 
@@ -33,7 +29,7 @@ export default function About() {
                         </p>
                     </div>
                     {/* Column 2 */}
-                    <div className="space-y-6 text-base leading-relaxed text-muted md:text-lg">
+                    <div className="space-y-6 max-w-prose text-base leading-relaxed text-muted md:text-lg">
                         <p>
                             Outside of coding, I enjoy outdoor hiking, solving Sudoku puzzles,
                             cinema, and exploring geography. These interests help me stay

@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section id="about" className="relative scroll-mt-24 py-10">
+        <section id="about" className="relative scroll-mt-24 py-10 md:py-20">
             {/* Subtle background layer */}
             <div
                 aria-hidden
@@ -8,10 +8,10 @@ export default function About() {
             />
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section label */}
-                <p className="mb-10 text-sm font-bold tracking-widest text-accent uppercase">
+                <p className="mb-10 text-sm font-bold tracking-widest text-accent uppercase opacity-80">
                     About Me
                 </p>
-                <div className="grid gap-12 md:grid-cols-2">
+                <div className="grid gap-12 md:grid-cols-2 md:gap-16">
                     {/* Column 1 */}
                     <div className="space-y-6 max-w-prose text-base leading-relaxed text-muted md:text-lg">
                         <p>

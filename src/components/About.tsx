@@ -3,7 +3,7 @@ export default function About() {
         <section id="about" className="relative scroll-mt-24 py-10 md:py-20">
             {/* Subtle background layer */}
             <div
-                aria-hidden
+                aria-hidden="true"
                 className="absolute inset-0 -z-10"
             />
             <div className="mx-auto max-w-6xl px-6">

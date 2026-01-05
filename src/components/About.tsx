@@ -4,11 +4,11 @@ export default function About() {
             {/* Subtle background layer */}
             <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.03),transparent_60%)]"
+                className="absolute inset-0 -z-10"
             />
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section label */}
-                <p className="mb-10 text-sm font-medium tracking-widest text-muted uppercase">
+                <p className="mb-10 text-sm font-bold tracking-widest text-accent uppercase">
                     About Me
                 </p>
                 <div className="grid gap-12 md:grid-cols-2">

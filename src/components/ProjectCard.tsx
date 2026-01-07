@@ -33,15 +33,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <h3 className="mb-2 text-lg font-semibold">
                     {project.title}
                 </h3>
-                <p className="mb-4 text-sm text-muted">
+                <p className="mb-4 text-sm">
                     {project.description}
                 </p>
                 {/* Tech Stack */}
-                <ul className="mb-6 flex flex-wrap gap-2">
+                <ul className="text-text mb-6 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                         <li
                             key={tech}
-                            className="rounded-full border border-border px-3 py-1 text-xs text-accent"
+                            className="text-accent rounded-full border border-border px-3 py-1 text-xs"
                         >
                             {tech}
                         </li>
@@ -53,7 +53,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex flex-1 items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/90"
+                        className="intro-cta-button inline-flex flex-1 items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/90"
                     >
                         Live Demo
                     </a>

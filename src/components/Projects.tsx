@@ -9,7 +9,7 @@ export default function Projects() {
         >
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section header */}
-                <div className="mb-12 max-w-2xl">
+                <div className="mb-12 mx-auto max-w-2xl text-center">
                     <p className="mb-2 text-sm font-bold tracking-widest text-accent">
                         PROJECTS
                     </p>

@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.tech.map((tech) => (
                         <li
                             key={tech}
-                            className="text-accent rounded-full border border-border px-3 py-1 text-xs"
+                            className="text-accent rounded-full border border-muted px-3 py-1 text-xs"
                         >
                             {tech}
                         </li>

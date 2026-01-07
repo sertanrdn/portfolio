@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    /* Light mode */
-    --color-bg: #f6f8fc;
-    --color-surface: #ffffff;
-    --color-text: #0f172a;
-    --color-muted: #64748b;
-    --color-border: #e2e8f0;
-    --color-accent: #4f46e5;
+  /* Light mode */
+  --color-bg: #f6f8fc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-accent: #4f46e5;
 }
 
 .dark {

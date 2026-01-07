@@ -1,18 +1,27 @@
 @import "tailwindcss";
 
-:root {
+@theme {
     /* Light mode */
-    --bg: #f6f8fc;
-    --surface: #ffffff;
-    --text: #0f172a;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --accent: #4f46e5;
+    --color-bg: #f6f8fc;
+    --color-surface: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-accent: #4f46e5;
+}
+
+.dark {
+  --color-bg: #060c1f;
+  --color-surface: #0f172a;
+  --color-text: #e5e7eb;
+  --color-muted: #8b9bb3;
+  --color-border: #1e293b;
+  --color-accent: #818cf8;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -32,21 +41,12 @@ body {
   animation: slide-down 0.2s ease-out;
 }
 
-.dark {
-  --bg: #060c1f;
-  --surface: #0f172a;
-  --text: #e5e7eb;
-  --muted: #8b9bb3;
-  --border: #1e293b;
-  --accent: #818cf8;
-}
-
 a.intro-cta-button {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 a.intro-cta-button:hover {
-  background-color: var(--accent);
-  color: var(--bg);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
 }

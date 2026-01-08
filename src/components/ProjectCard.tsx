@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <article 
-            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:shadow-lg"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.tech.map((tech) => (
                         <li
                             key={tech}
-                            className="text-accent rounded-full border border-muted px-3 py-1 text-xs"
+                            className="text-accent rounded-full border border-muted px-3 py-1 text-xs hover:bg-muted/10"
                         >
                             {tech}
                         </li>

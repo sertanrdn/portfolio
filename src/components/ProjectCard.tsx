@@ -37,7 +37,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.description}
                 </p>
                 {/* Tech Stack */}
-                <ul className="text-text mb-6 flex flex-wrap gap-2">
+                <ul className="mb-6 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                         <li
                             key={tech}
@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         rel="noopener noreferrer"
                         className="inline-flex flex-1 items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-border"
                     >
-                        Github Repo
+                        GitHub Repo
                     </a>
                 </div>
             </div>

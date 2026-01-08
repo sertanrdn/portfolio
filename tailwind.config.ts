@@ -5,18 +5,6 @@ const config: Config = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
-  theme: {
-    extend: {
-      colors: {
-        bg: "var(--bg)",
-        surface: "var(--surface)",
-        text: "var(--text)",
-        muted: "var(--muted)",
-        border: "var(--border)",
-        accent: "var(--accent)",
-      },
-    },
-  },
   plugins: [],
 };
 

@@ -2,6 +2,7 @@ import About from "../components/About";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         {/* Projects */}
         <Projects />
         {/* Skills */}
+        <Skills />
         {/* Contact */}
       </main>
     </>

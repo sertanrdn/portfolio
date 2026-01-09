@@ -3,6 +3,13 @@ import { skillIcons } from "../data/skillIcons";
 import Image from "next/image";
 
 export default function Skills () {
+    const blackIcons = [
+        "Next.js",
+        "Express.js",
+        "GitHub",
+        "CodePen"
+    ];
+
     return (
         <section
             id="skills"
@@ -43,7 +50,7 @@ export default function Skills () {
                                                     alt={skill}
                                                     width={16}
                                                     height={16}
-                                                    className="shrink-0"
+                                                    className={`shrink-0 ${blackIcons.includes(skill) ? 'dark:invert' : ''}`}
                                                 />
                                             )}
                                             <span>{skill}</span>

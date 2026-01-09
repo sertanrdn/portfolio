@@ -1,5 +1,6 @@
 import { skillsData } from "../data/skills";
 import { skillIcons } from "../data/skillIcons";
+import Image from "next/image";
 
 export default function Skills () {
     return (
@@ -28,7 +29,6 @@ export default function Skills () {
                             </h3>
                             <ul className="flex flex-wrap gap-2">
                                 {group.items.map((skill) => {
-                                    const Icon = skillIcons[skill];
                                     return (
                                         <li
                                             key={skill}
@@ -37,7 +37,15 @@ export default function Skills () {
                                                 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/5
                                             "
                                         >
-                                            {Icon && <Icon className="h-4 w-4" />}
+                                            {skillIcons[skill] && (
+                                                <Image
+                                                    src={skillIcons[skill]}
+                                                    alt={skill}
+                                                    width={16}
+                                                    height={16}
+                                                    className="shrink-0"
+                                                />
+                                            )}
                                             <span>{skill}</span>
                                         </li>
                                     )

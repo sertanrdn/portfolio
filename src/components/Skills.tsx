@@ -33,7 +33,7 @@ export default function Skills () {
                                         <li
                                             key={skill}
                                             className="flex items-center gap-2 rounded-full border border-border 
-                                                px-3 py-1 text-sm text-accent transition-all duration-200
+                                                px-3 py-1 text-sm text-foreground transition-all duration-200
                                                 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/5
                                             "
                                         >

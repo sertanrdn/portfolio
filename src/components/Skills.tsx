@@ -1,4 +1,5 @@
 import { skillsData } from "../data/skills";
+import { skillIcons } from "../data/skillIcons";
 
 export default function Skills () {
     return (
@@ -26,14 +27,21 @@ export default function Skills () {
                                 {group.category}
                             </h3>
                             <ul className="flex flex-wrap gap-2">
-                                {group.items.map((skill) => (
-                                    <li
-                                        key={skill}
-                                        className="rounded-full border border-border px-3 py-1 text-sm text-accent"
-                                    >
-                                        {skill}
-                                    </li>
-                                ))}
+                                {group.items.map((skill) => {
+                                    const Icon = skillIcons[skill];
+                                    return (
+                                        <li
+                                            key={skill}
+                                            className="flex items-center gap-2 rounded-full border border-border 
+                                                px-3 py-1 text-sm text-accent transition-all duration-200
+                                                hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/5
+                                            "
+                                        >
+                                            {Icon && <Icon className="h-4 w-4" />}
+                                            <span>{skill}</span>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     ))}

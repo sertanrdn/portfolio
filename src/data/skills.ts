@@ -5,10 +5,10 @@ export const skillsData = [
     },
     {
         category: "Backend",
-        items: ["Node.js", "Express.js", "MySQL", "NoSQL", "MongoDB", "REST API", "Zod"],
+        items: ["Node.js", "Express.js", "MySQL", "PostgreSQL", "MongoDB", "REST API", "Zod"],
     },
     {
         category: "Tools and Platforms",
-        items: ["Git", "GitHub", "VS Code", "Postman", "CodePen", "Netlify", "Heroku"]
+        items: ["Git", "GitHub", "Postman", "CodePen", "Netlify", "Heroku"]
     }
 ];

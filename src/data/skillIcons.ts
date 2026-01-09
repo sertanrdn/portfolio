@@ -1,0 +1,42 @@
+import { IconType } from "react-icons";
+import { 
+    SiJavascript, 
+    SiHtml5,
+    SiCss3,
+    SiReact,
+    SiTypescript,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiNodedotjs,
+    SiExpress,
+    SiMysql,
+    SiPostgresql,
+    SiMongodb,
+    SiGit,
+    SiGithub,
+    SiPostman,
+    SiNetlify,
+    SiHeroku,
+    SiZod
+} from "react-icons/si";
+
+export const skillIcons: Record<string, IconType> = {
+    JavaScript: SiJavascript,
+    HTML5: SiHtml5,
+    CSS: SiCss3,
+    React: SiReact,
+    TypeScript: SiTypescript,
+    "Next.js": SiNextdotjs,
+    "Tailwind CSS": SiTailwindcss,
+    "Node.js": SiNodedotjs,
+    "Express.js": SiExpress,
+    MySQL: SiMysql,
+    PostgreSQL: SiPostgresql,
+    MongoDB: SiMongodb,
+    Git: SiGit,
+    GitHub: SiGithub,
+    Postman: SiPostman,
+    Netlify: SiNetlify,
+    Heroku: SiHeroku,
+    Zod: SiZod,
+}

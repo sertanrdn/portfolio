@@ -29,7 +29,7 @@ const cardVariants: Variants = {
     },
 };
 
-const pillVariants = {
+const pillVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     show: {
         opacity: 1,
@@ -72,7 +72,9 @@ export default function Skills () {
                         <motion.div
                             variants={cardVariants}
                             key={group.category}
-                            className="rounded-2xl border border-border bg-surface p-6"
+                            className="rounded-2xl border border-border bg-surface p-6 
+                                transition-colors duration-300 hover:border-accent/30 hover:bg-accent/2
+                            "
                         >
                             <h3 className="mb-4 text-lg font-semibold">
                                 {group.category}
@@ -86,9 +88,9 @@ export default function Skills () {
                                         <motion.li
                                             variants={pillVariants}
                                             key={skill}
-                                            className="flex items-center gap-2 rounded-full border border-border 
+                                            className="group flex items-center gap-2 rounded-full border border-border 
                                                 px-3 py-1 text-sm text-foreground transition-all duration-200
-                                                hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/5
+                                                hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/10
                                             "
                                         >
                                             {skillIcons[skill] && (
@@ -97,7 +99,10 @@ export default function Skills () {
                                                     alt={skill}
                                                     width={16}
                                                     height={16}
-                                                    className={`shrink-0 ${blackIcons.includes(skill) ? 'dark:invert' : ''}`}
+                                                    className={`shrink-0 transition-transform duration-200 
+                                                        ${blackIcons.includes(skill) ? 'dark:invert' : ''}
+                                                        group-hover:scale-110
+                                                    `}
                                                 />
                                             )}
                                             <span>{skill}</span>

@@ -10,5 +10,5 @@ export const skillsData = [
     {
         category: "Tools and Platforms",
         items: ["Git", "GitHub", "Postman", "CodePen", "Netlify", "Heroku"]
-    }
+    },
 ];

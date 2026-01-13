@@ -83,32 +83,31 @@ export default function Skills () {
                                 variants={containerVariants}
                                 className="flex flex-wrap gap-2"
                             >
-                                {group.items.map((skill) => {
-                                    return (
-                                        <motion.li
-                                            variants={pillVariants}
-                                            key={skill}
-                                            className="group flex items-center gap-2 rounded-full border border-border 
-                                                px-3 py-1 text-sm text-foreground transition-all duration-200
-                                                hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/10
-                                            "
-                                        >
-                                            {skillIcons[skill] && (
-                                                <Image
-                                                    src={skillIcons[skill]}
-                                                    alt={skill}
-                                                    width={16}
-                                                    height={16}
-                                                    className={`shrink-0 transition-transform duration-200 
-                                                        ${blackIcons.includes(skill) ? 'dark:invert' : ''}
-                                                        group-hover:scale-110
-                                                    `}
-                                                />
-                                            )}
-                                            <span>{skill}</span>
-                                        </motion.li>
-                                    )
-                                })}
+                                {group.items.map((skill) => (
+                                    <motion.li
+                                        variants={pillVariants}
+                                        key={skill}
+                                        className="group flex items-center gap-2 rounded-full border border-border 
+                                            px-3 py-1 text-sm text-foreground transition-all duration-200
+                                            hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/10
+                                        "
+                                    >
+                                        {skillIcons[skill] && (
+                                            <Image
+                                                src={skillIcons[skill]}
+                                                alt=""
+                                                aria-hidden="true"
+                                                width={16}
+                                                height={16}
+                                                className={`shrink-0 transition-transform duration-200 
+                                                    ${blackIcons.includes(skill) ? 'dark:invert' : ''}
+                                                    group-hover:scale-110
+                                                `}
+                                            />
+                                        )}
+                                        <span>{skill}</span>
+                                    </motion.li>
+                                ))}
                             </motion.ul>
                         </motion.div>
                     ))}

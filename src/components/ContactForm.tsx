@@ -14,7 +14,10 @@ export default function ContactForm() {
                     id="name"
                     type="text"
                     placeholder="Your Full Name"
-                    className="rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="rounded-lg border border-border bg-surface px-4 py-2 text-sm
+                        text-text placeholder:text-muted
+                        focus:outline-none focus:border-accent
+                    "
                 />
             </div>
             <div className="flex flex-col gap-2">
@@ -28,7 +31,10 @@ export default function ContactForm() {
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
-                    className="rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="rounded-lg border border-border bg-surface px-4 py-2 text-sm
+                        text-text placeholder:text-muted
+                        focus:outline-none focus:border-accent
+                    "
                 />
             </div>
             <div className="flex flex-col gap-2">
@@ -42,15 +48,23 @@ export default function ContactForm() {
                     id="message"
                     rows={5}
                     placeholder="Your message..."
-                    className="resize-none rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="resize-none rounded-lg border border-border bg-surface px-4 py-2 text-sm
+                        text-text placeholder:text-muted
+                        focus:outline-none focus:border-accent
+                    "
                 />
             </div>
-            <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 font-medium text-primary-foreground transition hover:opacity-90"
-            >
-                Send Message
-            </button>
+            <div className="flex justify-center pt-4">
+                <button
+                    type="submit"
+                    className="intro-cta-button inline-flex items-center 
+                        justify-center rounded-lg border px-6 py-3 text-sm 
+                        font-medium transition hover:shadow-md cursor-pointer
+                    "
+                >
+                    Send Message
+                </button>
+            </div>
         </form>
     );
 }

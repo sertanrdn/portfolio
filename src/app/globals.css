@@ -43,12 +43,12 @@ body {
   animation: slide-down 0.2s ease-out;
 }
 
-a.intro-cta-button {
+.intro-cta-button {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
 
-a.intro-cta-button:hover {
+.intro-cta-button:hover {
   background-color: var(--color-accent);
   color: var(--color-bg);
 }

@@ -1,8 +1,31 @@
 'use client'
 
+import { useState } from "react";
+
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 export default function ContactForm() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState<FormStatus>("idle");
+
+    function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setStatus("loading");
+
+        // simulate request
+        setTimeout(() => {
+            setStatus("success");
+            setName("");
+            setEmail("");
+            setMessage("");
+        }, 1000)
+        
+    }
+
     return (
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
             <div className="flex flex-col gap-2">
                 <label
                     htmlFor="name"
@@ -11,6 +34,8 @@ export default function ContactForm() {
                     Name
                 </label>
                 <input 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     id="name"
                     type="text"
                     placeholder="Your Full Name"
@@ -18,6 +43,7 @@ export default function ContactForm() {
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
                     "
+                    required
                 />
             </div>
             <div className="flex flex-col gap-2">
@@ -28,6 +54,8 @@ export default function ContactForm() {
                     Email
                 </label>
                 <input 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
@@ -35,6 +63,7 @@ export default function ContactForm() {
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
                     "
+                    required
                 />
             </div>
             <div className="flex flex-col gap-2">
@@ -45,6 +74,8 @@ export default function ContactForm() {
                     Message
                 </label>
                 <textarea 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     id="message"
                     rows={5}
                     placeholder="Your message..."
@@ -52,17 +83,31 @@ export default function ContactForm() {
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
                     "
+                    required
                 />
             </div>
+            {status === "success" && (
+                <p className="text-sm text-green-600 text-center">
+                    Message sent successfully!
+                </p>
+            )}
+
+            {status === "error" && (
+                <p className="text-sm text-red-600 text-center">
+                    Something went wrong. Please try again.
+                </p>
+            )}
             <div className="flex justify-center pt-4">
                 <button
                     type="submit"
+                    disabled={status === "loading"}
                     className="intro-cta-button inline-flex items-center 
                         justify-center rounded-lg border px-6 py-3 text-sm 
                         font-medium transition hover:shadow-md cursor-pointer
+                        disabled:opacity-50 disabled:cursor-not-allowed
                     "
                 >
-                    Send Message
+                    {status === "loading" ? "Sending..." : "Send Message"}
                 </button>
             </div>
         </form>

@@ -22,6 +22,11 @@ export default function ContactForm() {
             setName("");
             setEmail("");
             setMessage("");
+
+            // clear the message after 5 sec.
+            setTimeout(() => {
+                setStatus("idle");
+            }, 5000);
         } else {
             setStatus("error");
         }

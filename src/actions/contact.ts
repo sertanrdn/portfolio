@@ -15,15 +15,21 @@ export async function sendContactEmail(formData: {
         await resend.emails.send({
             from: `Portfolio Contact <${process.env.RESEND_FROM_EMAIL}>`,
             to: process.env.CONTACT_RECEIVER_EMAIL!,
-            subject: `New contact message from ${name}`,
+            subject: `Portfolio Contact — ${name}`,
             replyTo: email,
             html: `
-                <div style="font-family: sans-serif;">
-                    <h2>New Contact Message</h2>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>${message}</p>
+                <div style="font-family: Arial, sans-serif; background:#f9fafb; padding:24px;">
+                    <div style="max-width:600px; margin:auto; background:white; border-radius:8px; padding:24px;">
+                        <h2 style="margin-top:0;">📩 New Contact Message</h2>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <hr style="margin:24px 0;" />
+                        <p style="white-space:pre-line;">${message}</p>
+                        <hr style="margin:24px 0;" />
+                        <p style="font-size:12px; color:#6b7280;">
+                            Sent from your portfolio contact form.
+                        </p>
+                    </div>
                 </div>
             `,
         });

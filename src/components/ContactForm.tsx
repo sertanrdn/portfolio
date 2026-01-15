@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import { sendContactEmail } from "../actions/contact";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -10,18 +11,20 @@ export default function ContactForm() {
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState<FormStatus>("idle");
 
-    function handleSubmit(e: React.FormEvent) {
+    async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setStatus("loading");
 
-        // simulate request
-        setTimeout(() => {
+        const result = await sendContactEmail({ name, email, message });
+
+        if (result.success) {
             setStatus("success");
             setName("");
             setEmail("");
             setMessage("");
-        }, 1000)
-        
+        } else {
+            setStatus("error");
+        }
     }
 
     return (

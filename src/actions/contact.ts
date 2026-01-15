@@ -13,9 +13,10 @@ export async function sendContactEmail(formData: {
         const { name, email, message } = formData;
 
         await resend.emails.send({
-            from: "Portfolio Contact <process.env.RESEND_FROM_EMAIL>",
+            from: `Portfolio Contact <${process.env.RESEND_FROM_EMAIL}>`,
             to: process.env.CONTACT_RECEIVER_EMAIL!,
             subject: `New contact message from ${name}`,
+            replyTo: email,
             html: `
                 <div style="font-family: sans-serif;">
                     <h2>New Contact Message</h2>

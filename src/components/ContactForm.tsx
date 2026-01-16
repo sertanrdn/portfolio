@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { sendContactEmail } from "../actions/contact";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -10,6 +10,15 @@ export default function ContactForm() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState<FormStatus>("idle");
+    const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        return () => {
+            if (resetTimeoutRef.current) {
+                clearTimeout(resetTimeoutRef.current);
+            }
+        }
+    }, []);
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -23,8 +32,12 @@ export default function ContactForm() {
             setEmail("");
             setMessage("");
 
+            if (resetTimeoutRef.current) {
+                clearTimeout(resetTimeoutRef.current);
+            }
+
             // clear the message after 5 sec.
-            setTimeout(() => {
+            resetTimeoutRef.current = setTimeout(() => {
                 setStatus("idle");
             }, 5000);
         } else {
@@ -102,7 +115,8 @@ export default function ContactForm() {
 
             {status === "error" && (
                 <p className="text-sm text-red-600 text-center">
-                    Something went wrong. Please try again.
+                    We couldn’t send your message.
+                    Please check your internet connection and try again in a moment.
                 </p>
             )}
             <div className="flex justify-center pt-4">

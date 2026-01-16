@@ -38,7 +38,7 @@ const pillVariants: Variants = {
     },
 };
 
-export default function Skills () {
+export default function Skills() {
     const blackIcons = [
         "Next.js",
         "Express.js",

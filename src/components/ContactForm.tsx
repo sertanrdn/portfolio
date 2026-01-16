@@ -12,6 +12,8 @@ export default function ContactForm() {
     const [status, setStatus] = useState<FormStatus>("idle");
     const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+    const isLoading = status === "loading";
+
     useEffect(() => {
         return () => {
             if (resetTimeoutRef.current) {
@@ -42,6 +44,14 @@ export default function ContactForm() {
             }, 5000);
         } else {
             setStatus("error");
+
+            if (resetTimeoutRef.current) {
+                clearTimeout(resetTimeoutRef.current);
+            }
+            // clear the error status after 5 sec.
+            resetTimeoutRef.current = setTimeout(() => {
+                setStatus("idle");
+            }, 5000);
         }
     }
 
@@ -59,10 +69,12 @@ export default function ContactForm() {
                     onChange={(e) => setName(e.target.value)}
                     id="name"
                     type="text"
+                    disabled={isLoading}
                     placeholder="Your Full Name"
                     className="rounded-lg border border-border bg-surface px-4 py-2 text-sm
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
+                        disabled:opacity-50 disabled:cursor-not-allowed
                     "
                     required
                 />
@@ -79,10 +91,12 @@ export default function ContactForm() {
                     onChange={(e) => setEmail(e.target.value)}
                     id="email"
                     type="email"
+                    disabled={isLoading}
                     placeholder="your.email@example.com"
                     className="rounded-lg border border-border bg-surface px-4 py-2 text-sm
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
+                        disabled:opacity-50 disabled:cursor-not-allowed
                     "
                     required
                 />
@@ -99,22 +113,32 @@ export default function ContactForm() {
                     onChange={(e) => setMessage(e.target.value)}
                     id="message"
                     rows={5}
+                    disabled={isLoading}
                     placeholder="Your message..."
                     className="resize-none rounded-lg border border-border bg-surface px-4 py-2 text-sm
                         text-text placeholder:text-muted
                         focus:outline-none focus:border-accent
+                        disabled:opacity-50 disabled:cursor-not-allowed
                     "
                     required
                 />
             </div>
             {status === "success" && (
-                <p className="text-sm text-green-600 text-center">
+                <p 
+                    className="text-sm text-green-600 text-center"
+                    role="status"
+                    aria-live="polite"
+                >
                     Message sent successfully!
                 </p>
             )}
 
             {status === "error" && (
-                <p className="text-sm text-red-600 text-center">
+                <p 
+                    className="text-sm text-red-600 text-center"
+                    role="alert"
+                    aria-live="assertive"
+                >
                     We couldn’t send your message.
                     Please check your internet connection and try again in a moment.
                 </p>

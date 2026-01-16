@@ -2,11 +2,6 @@
 
 import { Resend } from "resend";
 
-// Required environment variables:
-// - RESEND_API_KEY: API key used to authenticate with Resend.
-// - RESEND_FROM_EMAIL: The verified sender email address used in the "from" field.
-// - CONTACT_RECEIVER_EMAIL: The email address that will receive contact form submissions.
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 function escapeHtml(input: string) {
@@ -29,16 +24,20 @@ export async function sendContactEmail(formData: {
         const message = formData.message.trim();
 
         if (!name || !email || !message) {
-            return { success: false };
+            return { success: false, error: "Name or email or message should not be empty" };
         }
 
         if (name.length > 100 || message.length > 2000) {
-            return { success: false };
+            return { success: false, error: "Message should be more than 100 and less than 2000 characters" };
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email) || /[\r\n]/.test(email)) {
-            return { success: false };
+        if (
+            !emailRegex.test(email) || 
+            /[\r\n]/.test(email) || 
+            email.length > 254
+        ) {
+            return { success: false, error: "Invalid email" };
         }
 
         await resend.emails.send({

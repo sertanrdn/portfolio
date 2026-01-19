@@ -38,6 +38,7 @@ export default function Footer() {
                                 <Link
                                     href={link.href}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={link.label}
                                     className="
                                         group flex items-center gap-3

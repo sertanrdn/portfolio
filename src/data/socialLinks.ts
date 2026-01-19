@@ -1,6 +1,6 @@
 export const socialLinks = [
     {
-        label: "Github",
+        label: "GitHub",
         href: "https://github.com/sertanrdn",
         icon: "/icons/github.svg",
         invertOnDark: true,

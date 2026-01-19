@@ -6,13 +6,7 @@ import { useState, useMemo, useEffect } from "react";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 import DrawerMenu from "./DrawerMenu";
-
-const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" }
-];
+import { navItems } from "../data/navigation";
 
 export default function Navbar() {
     // scroll-spy

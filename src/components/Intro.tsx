@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp } from "../lib/motion";
 import HeroBackground from "./HeroBackground";
+import TypingText from "./TypingText";
 
 export default function Intro() {
     return (
@@ -38,15 +39,7 @@ export default function Intro() {
                         >
                             {introData.name}
                         </motion.h1>
-                        <motion.h2 
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{ delay: 0.1 }}
-                            className="text-xl md:text-2xl text-muted"
-                        >
-                            {introData.role}
-                        </motion.h2>
+                        <TypingText text={introData.role} delay={0.4} />
                         <motion.p 
                             variants={fadeUp}
                             initial="hidden"

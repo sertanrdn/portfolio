@@ -2,20 +2,15 @@
 
 import Image from "next/image";
 import { Project } from "../data/projects";
-import { useState } from "react";
 
 type ProjectCardProps = {
     project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
         <article 
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
         >
             {/* Project Image */}
             <div className="relative aspect-video overflow-hidden border-b border-border">
@@ -23,7 +18,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className={`object-cover transition-all duration-500 ${isHovered ? 'scale-105' : 'scale-100'}`}
+                    className="object-cover transition-transform 
+                        duration-500 group-hover:scale-105
+                    "
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>

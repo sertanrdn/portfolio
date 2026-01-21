@@ -4,10 +4,12 @@ import { introData } from "../data/intro";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp } from "../lib/motion";
+import HeroBackground from "./HeroBackground";
 
 export default function Intro() {
     return (
         <section id="intro" className="min-h-[calc(100vh-5rem)] flex items-center">
+            <HeroBackground />
             <div className="max-w-7xl mx-auto px-4 w-full">
                 {/* Layout wrapper */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -28,17 +30,6 @@ export default function Intro() {
   
                     {/* Text column */}
                     <div className="text-center md:text-left space-y-4">
-                        <motion.span
-                            initial={{ opacity: 0, x: -12 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
-                            className="
-                                inline-block text-xs font-semibold uppercase 
-                                tracking-wide text-accent mb-1
-                            "
-                        >
-                            Hi, I&apos;m
-                        </motion.span>
                         <motion.h1
                             initial={{ opacity: 0, y: 16, scale: 0.98 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}

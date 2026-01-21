@@ -21,6 +21,10 @@
   --color-accent: #818cf8;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text);

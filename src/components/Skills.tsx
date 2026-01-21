@@ -3,40 +3,8 @@
 import { skillsData } from "../data/skills";
 import { skillIcons } from "../data/skillIcons";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-
-const containerVariants: Variants = {
-    hidden: {},
-    show: {
-        transition: {
-            staggerChildren: 0.12,
-        },
-    },
-};
-
-const cardVariants: Variants = {
-    hidden: { 
-        opacity: 0, 
-        y: 24 
-    },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: { 
-            duration: 0.5, 
-            ease: [0.25, 0.1, 0.25, 1]
-        },
-    },
-};
-
-const pillVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    show: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.25 },
-    },
-};
+import { motion } from "framer-motion";
+import { skillsContainer, skillsCard, skillsPill } from "../lib/motion";
 
 export default function Skills() {
     const blackIcons = [
@@ -51,7 +19,7 @@ export default function Skills() {
             id="skills"
             className="relative scroll-mt-24 py-10 md:py-20"
         >
-            <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-6xl px-6 text-center">
                 {/* Section label */}
                 <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">
                     Skills
@@ -62,7 +30,7 @@ export default function Skills() {
                 </h2>
                 {/* Skills grid */}
                 <motion.div 
-                    variants={containerVariants}
+                    variants={skillsContainer}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-100px" }}
@@ -70,7 +38,7 @@ export default function Skills() {
                 >
                     {skillsData.map((group) => (
                         <motion.div
-                            variants={cardVariants}
+                            variants={skillsCard}
                             key={group.category}
                             className="rounded-2xl border border-border bg-surface p-6 
                                 transition-colors duration-300 hover:border-accent/30 hover:bg-accent/2
@@ -80,12 +48,12 @@ export default function Skills() {
                                 {group.category}
                             </h3>
                             <motion.ul
-                                variants={containerVariants}
+                                variants={skillsContainer}
                                 className="flex flex-wrap gap-2"
                             >
                                 {group.items.map((skill) => (
                                     <motion.li
-                                        variants={pillVariants}
+                                        variants={skillsPill}
                                         key={skill}
                                         className="group flex items-center gap-2 rounded-full border border-border 
                                             px-3 py-1 text-sm text-foreground transition-all duration-200

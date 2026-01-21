@@ -1,9 +1,16 @@
+'use client'
+
 import { introData } from "../data/intro";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeUp } from "../lib/motion";
+import HeroBackground from "./HeroBackground";
+import TypingText from "./TypingText";
 
 export default function Intro() {
     return (
         <section id="intro" className="min-h-[calc(100vh-5rem)] flex items-center">
+            <HeroBackground />
             <div className="max-w-7xl mx-auto px-4 w-full">
                 {/* Layout wrapper */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -17,23 +24,37 @@ export default function Intro() {
                                 width={1120}
                                 height={1600}
                                 className="w-full h-full object-cover rounded-full"
+                                priority
                             />
                         </div>
                     </div>
   
                     {/* Text column */}
                     <div className="text-center md:text-left space-y-4">
-                        <h1 className="text-4xl md:text-5xl font-bold text-text">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
+                            className="text-4xl md:text-5xl font-bold text-text"
+                        >
                             {introData.name}
-                        </h1>
-                        <h2 className="text-xl md:text-2xl text-muted">
-                            {introData.role}
-                        </h2>
-                        <p className="max-w-xl mx-auto md:mx-0 text-muted leading-relaxed">
+                        </motion.h1>
+                        <TypingText text={introData.role} delay={0.4} />
+                        <motion.p 
+                            variants={fadeUp(0.15)}
+                            initial="hidden"
+                            animate="visible"
+                            className="max-w-xl mx-auto md:mx-0 text-muted leading-relaxed"
+                        >
                             {introData.description}
-                        </p>
-                        <a 
+                        </motion.p>
+                        <motion.a 
                             href={introData.cta.href} 
+                            variants={fadeUp(0.2)}
+                            initial="hidden"
+                            animate="visible"
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.97 }}
                             className="
                                 intro-cta-button inline-flex items-center 
                                 justify-center mt-6 px-6 py-3 rounded-lg 
@@ -41,7 +62,7 @@ export default function Intro() {
                             "
                         >
                             {introData.cta.label}
-                        </a>
+                        </motion.a>
                     </div>
                 </div>
             </div>

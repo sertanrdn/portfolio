@@ -41,20 +41,18 @@ export default function Intro() {
                         </motion.h1>
                         <TypingText text={introData.role} delay={0.4} />
                         <motion.p 
-                            variants={fadeUp}
+                            variants={fadeUp(0.15)}
                             initial="hidden"
                             animate="visible"
-                            transition={{ delay: 0.15 }}
                             className="max-w-xl mx-auto md:mx-0 text-muted leading-relaxed"
                         >
                             {introData.description}
                         </motion.p>
                         <motion.a 
                             href={introData.cta.href} 
-                            variants={fadeUp}
+                            variants={fadeUp(0.2)}
                             initial="hidden"
                             animate="visible"
-                            transition={{ delay: 0.2 }}
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.97 }}
                             className="

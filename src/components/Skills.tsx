@@ -4,7 +4,7 @@ import { skillsData } from "../data/skills";
 import { skillIcons } from "../data/skillIcons";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { skillsContainer, skillsCard, skillsPill  } from "../lib/motion";
+import { skillsContainer, skillsCard, skillsPill } from "../lib/motion";
 
 export default function Skills() {
     const blackIcons = [

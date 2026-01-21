@@ -1,13 +1,13 @@
 import { Variants } from "framer-motion";
 
-export const fadeUp: Variants = {
+export const fadeUp = (delay = 0): Variants => ({
     hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.4, ease: "easeOut" },
+        transition: { duration: 0.4, ease: "easeOut", delay },
     },
-};
+});
 
 export const hoverLift = {
     whileHover: { y: -6 },

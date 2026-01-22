@@ -52,7 +52,7 @@ export default function DrawerMenu({ open, onClose, items, activeId }: DrawerMen
                             key={item.href}
                             href={item.href}
                             className={`
-                                block rounded-md px-3 py-2 text-sm font-medium
+                                block rounded-md px-3 py-2 text-base font-medium
                                 transition-colors
                                 ${activeId === item.href.slice(1)
                                     ? "text-accent bg-accent/10"

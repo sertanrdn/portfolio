@@ -9,7 +9,7 @@ import TypingText from "./TypingText";
 
 export default function Intro() {
     return (
-        <section id="intro" className="min-h-screen flex items-center">
+        <section id="intro" className="scroll-mt-20 min-h-[calc(100vh-4rem)] flex items-center">
             <HeroBackground />
             <div className="max-w-7xl mx-auto px-4 w-full">
                 {/* Layout wrapper */}

@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section id="about" className="relative scroll-mt-24 py-10 md:py-20">
+        <section id="about" className="relative scroll-mt-20 py-10 md:py-20">
             {/* Subtle background layer */}
             <div
                 aria-hidden="true"

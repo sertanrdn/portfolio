@@ -5,7 +5,7 @@ import { socialLinks } from "../data/socialLinks";
 
 export default function Footer() {
     return (
-        <footer className="relative border-t border-border">
+        <footer className="relative border-t border-border bg-surface/60">
             <div className="mx-auto max-w-6xl px-6 py-14">
                 <div className="grid gap-10 md:grid-cols-3">
                     <div>
@@ -64,7 +64,7 @@ export default function Footer() {
                         ))}
                     </ul>
                 </div>
-                <div className="mt-12 border-t border-border pt-6 text-center text-xs text-muted">
+                <div className="mt-14 border-t border-border/60 pt-6 text-center text-xs text-muted">
                     © {new Date().getFullYear()} Sertan Erdogan. All rights reserved.
                 </div>
             </div>

@@ -8,12 +8,21 @@ export default function About() {
             />
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section label */}
-                <p className="mb-10 text-sm font-bold tracking-widest text-accent uppercase opacity-80">
-                    About Me
+                <p className="mb-4 text-sm font-bold tracking-widest text-accent text-center">
+                    ABOUT
                 </p>
+                <h2 className="mb-8 text-3xl font-bold md:text-4xl text-center">
+                    About Me
+                </h2>
                 <div className="grid gap-12 md:grid-cols-2 md:gap-16">
                     {/* Column 1 */}
-                    <div className="space-y-6 max-w-prose text-base leading-relaxed text-muted md:text-lg">
+                    <div 
+                        className="
+                            space-y-6 max-w-prose text-base leading-relaxed
+                            text-muted md:text-lg md:border-l-2 
+                            md:border-accent/30 md:pl-6
+                        "
+                    >
                         <p>
                             I’m a full-stack web developer based in the Netherlands who enjoys 
                             turning real-world problems into practical, working solutions using 

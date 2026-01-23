@@ -50,6 +50,21 @@ export default function About() {
                             and AI-driven solutions, while continuing to sharpen my current 
                             tech stack by learning new frameworks and libraries.
                         </p>
+                        <div className="pt-4 flex justify-center md:justify-start">
+                            <a
+                                href="/cv/Sertan_Erdogan_CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                                    intro-cta-button inline-flex items-center 
+                                    justify-center rounded-lg border
+                                    px-6 py-3 text-sm font-medium
+                                    transition hover:shadow-sm
+                                "
+                            >
+                                View CV
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

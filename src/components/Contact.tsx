@@ -4,7 +4,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="relative scroll-mt-24 py-10 md:py-20"
+            className="relative scroll-mt-20 py-10 md:py-20"
         >
             <div className="mx-auto max-w-3xl px-4">
                 <div className="mb-10 text-center">

@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section id="about" className="relative scroll-mt-24 py-10 md:py-20">
+        <section id="about" className="relative scroll-mt-20 py-10 md:py-20">
             {/* Subtle background layer */}
             <div
                 aria-hidden="true"
@@ -8,12 +8,21 @@ export default function About() {
             />
             <div className="mx-auto max-w-6xl px-6">
                 {/* Section label */}
-                <p className="mb-10 text-sm font-bold tracking-widest text-accent uppercase opacity-80">
-                    About Me
+                <p className="mb-4 text-sm font-bold tracking-widest text-accent text-center">
+                    ABOUT
                 </p>
+                <h2 className="mb-8 text-3xl font-bold md:text-4xl text-center">
+                    About Me
+                </h2>
                 <div className="grid gap-12 md:grid-cols-2 md:gap-16">
                     {/* Column 1 */}
-                    <div className="space-y-6 max-w-prose text-base leading-relaxed text-muted md:text-lg">
+                    <div 
+                        className="
+                            space-y-6 max-w-prose text-base leading-relaxed
+                            text-muted md:text-lg md:border-l-2 
+                            md:border-accent/30 md:pl-6
+                        "
+                    >
                         <p>
                             I’m a full-stack web developer based in the Netherlands who enjoys 
                             turning real-world problems into practical, working solutions using 
@@ -41,6 +50,21 @@ export default function About() {
                             and AI-driven solutions, while continuing to sharpen my current 
                             tech stack by learning new frameworks and libraries.
                         </p>
+                        <div className="pt-4 flex justify-center md:justify-start">
+                            <a
+                                href="/cv/Sertan_Erdogan_CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                                    intro-cta-button inline-flex items-center 
+                                    justify-center rounded-lg border
+                                    px-6 py-3 text-sm font-medium
+                                    transition hover:shadow-sm
+                                "
+                            >
+                                View CV
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

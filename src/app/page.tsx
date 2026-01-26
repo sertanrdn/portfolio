@@ -11,7 +11,7 @@ export default function Home() {
     <>
       {/* Navbar */}
       <Navbar />
-      <main className="pt-20 min-h-screen">
+      <main className="pt-20 min-h-screen space-y-32">
         {/* Intro */}
         <Intro />
         {/* About */}

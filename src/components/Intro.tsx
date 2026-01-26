@@ -9,7 +9,7 @@ import TypingText from "./TypingText";
 
 export default function Intro() {
     return (
-        <section id="intro" className="min-h-[calc(100vh-5rem)] flex items-center">
+        <section id="intro" className="scroll-mt-20 min-h-[calc(100vh-4rem)] flex items-center">
             <HeroBackground />
             <div className="max-w-7xl mx-auto px-4 w-full">
                 {/* Layout wrapper */}
@@ -17,7 +17,12 @@ export default function Intro() {
                     {/* Image column */}
                     <div className="flex justify-center md:justify-center md:pr-12">
                         {/* Image will go here */}
-                        <div className="w-40 h-40 md:w-64 md:h-64 rounded-full bg-gray-200">
+                        <div 
+                            className="
+                                w-40 h-40 md:w-64 md:h-64 rounded-full 
+                                bg-surface ring-2 ring-border shadow-lg
+                            "
+                        >
                             <Image
                                 src="/profile.jpeg"
                                 alt={introData.name}
@@ -35,7 +40,7 @@ export default function Intro() {
                             initial={{ opacity: 0, y: 16, scale: 0.98 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
-                            className="text-4xl md:text-5xl font-bold text-text"
+                            className="text-4xl md:text-5xl font-bold text-text tracking-tight"
                         >
                             {introData.name}
                         </motion.h1>

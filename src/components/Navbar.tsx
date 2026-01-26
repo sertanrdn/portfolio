@@ -51,22 +51,30 @@ export default function Navbar() {
 
     return (
         <header className="fixed top-0 w-full z-30">
-            <nav className="w-full bg-surface/95 backdrop-blur border-b border-border">
+            <nav className="border border-border bg-surface/80 backdrop-blur-md shadow-sm">
                 <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-                    <span className="font-bold text-xl text-text">Sertan Erdogan</span>
+                    <Link href="#intro" className="group inline-flex items-center">
+                        <span className="font-bold text-xl text-text">Sertan Erdogan</span>
+                    </Link>
                     {/* Desktop Nav */}
                     <ul className="hidden md:flex items-center gap-6">
                         {navItems.map((item) => (
                             <li key={item.href}>
                                 <Link
                                     href={item.href}
-                                    className={`text-sm font-medium transition-colors ${
+                                    className={`relative text-sm font-medium transition-colors ${
                                         activeId === item.href.slice(1)
                                         ? "text-accent"
                                         : "text-muted hover:text-accent hover:opacity-80"
                                         }`}
                                 >
                                     {item.label}
+                                    <span
+                                        className={`
+                                        absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300
+                                        ${activeId === item.href.slice(1) ? "w-full" : "w-0"}
+                                        `}
+                                    />
                                 </Link>
                             </li>
                         ))}

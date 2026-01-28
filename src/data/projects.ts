@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
         description: "A modern, responsive portfolio website built to showcase projects and skills with clean UI and smooth interactions.",
         image: "/projects/portfolio.png",
         tech: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
-        liveUrl: "https://sertanerdogan.com",
+        liveUrl: "https://sertanerdogan.me",
         repoUrl: "https://github.com/sertanrdn/portfolio"
     }
 ];

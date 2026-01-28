@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sertan Erdogan | Full-Stack Web Developer",
   description: "Personal portfolio of Sertan Erdogan, a Full-Stack Web Developer specializing in React, TypeScript, Next.js, and Node.js.",
+  icons: {
+    icon: "/favicon.png", // <-- Add this line
+  },
 };
 
 export default function RootLayout({
